@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ClubInformationDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ClubInformationEntity" id="clubInformationMap">
+        <result property="shetuanmingcheng" column="shetuanmingcheng"/>
+        <result property="tupian" column="tupian"/>
+        <result property="shetuanbiaoqian" column="shetuanbiaoqian"/>
+        <result property="shetuanleixing" column="shetuanleixing"/>
+        <result property="shetuanmubiao" column="shetuanmubiao"/>
+        <result property="renshu" column="renshu"/>
+        <result property="shetuanjianjie" column="shetuanjianjie"/>
+        <result property="shetuanxiangqing" column="shetuanxiangqing"/>
+        <result property="xueshengzhanghao" column="xueshengzhanghao"/>
+        <result property="xueshengxingming" column="xueshengxingming"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ClubInformationVO" >
+		SELECT * FROM club_information  shetuanxinxi
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ClubInformationVO" >
+		SELECT  shetuanxinxi.* FROM club_information  shetuanxinxi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ClubInformationView" >
+
+		SELECT  shetuanxinxi.* FROM club_information  shetuanxinxi
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ClubInformationView" >
+		SELECT * FROM club_information  shetuanxinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
